@@ -1,126 +1,156 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>شركة تصدير واستيراد محاصيل زراعية</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Tahoma, sans-serif;
-      background-color: #f3f8f3;
-      color: #333;
-    }
-    header {
-      background-color: #2e7d32;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      color: #2e7d32;
-      margin-bottom: 20px;
-    }
-    .about, .services, .products {
-      background: white;
-      margin-bottom: 30px;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-    .product {
-      background-color: #e8f5e9;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      font-weight: bold;
-    }
-    ul {
-      line-height: 2;
-    }
-    .contact {
-      background-color: #2e7d32;
-      color: white;
-      text-align: center;
-      border-radius: 12px;
-    }
-    footer {
-      background-color: #1b5e20;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 30px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة النماء للاستيراد والتصدير الزراعي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --main-color: #2e7d32;
+            --secondary-color: #fbc02d;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cairo', sans-serif; line-height: 1.6; color: var(--text-color); scroll-behavior: smooth; }
+
+        /* Header */
+        header {
+            background: white; padding: 1rem 5%; display: flex; justify-content: space-between;
+            align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--main-color); text-decoration: none; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-right: 20px; }
+        nav ul li a { text-decoration: none; color: var(--text-color); font-weight: 600; transition: 0.3s; }
+        nav ul li a:hover { color: var(--main-color); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; background-position: center; height: 90vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white; padding: 0 20px;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.4rem; margin-bottom: 2rem; max-width: 800px; }
+
+        /* Buttons */
+        .btn { background: var(--main-color); color: white; padding: 12px 35px; text-decoration: none; border-radius: 30px; font-weight: bold; transition: 0.3s; border: none; cursor: pointer; }
+        .btn:hover { background: #1b5e20; transform: scale(1.05); }
+
+        /* Features */
+        .features { padding: 5rem 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; background: white; }
+        .feature-card { padding: 40px; text-align: center; border-radius: 15px; background: var(--light-bg); transition: 0.3s; }
+        .feature-card i { font-size: 3.5rem; color: var(--main-color); margin-bottom: 20px; }
+        .feature-card:hover { transform: translateY(-10px); background: #e8f5e9; }
+
+        /* Products Gallery */
+        .products-section { padding: 5rem 5%; text-align: center; background: #fff; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
+        .product-item { position: relative; border-radius: 15px; overflow: hidden; height: 350px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .product-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .product-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: white; padding: 25px; text-align: right; }
+        .product-item:hover img { transform: scale(1.1); }
+
+        /* Contact Section */
+        .contact-section { padding: 5rem 5%; background: var(--light-bg); text-align: center; }
+        .contact-container { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 15px; text-align: right; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Cairo'; }
+
+        /* Footer */
+        footer { background: #1a1a1a; color: white; text-align: center; padding: 3rem; margin-top: 2rem; }
+        .social-links { margin-bottom: 20px; }
+        .social-links a { color: white; margin: 0 10px; font-size: 1.5rem; }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1></h1>HealthyChoice for import and export of agriculture crops</h1>
-    <p>جودة عالية • ثقة • أسواق عالمية</p>
-  </header>
+    <header>
+        <a href="#" class="logo">🍀 النماء للتصدير</a>
+        <nav>
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#products">منتجاتنا</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section class="about">
-    <h2>من نحن</h2>
-    <p>
-      نحن شركة متخصصة في تصدير واستيراد المحاصيل الزراعية الطازجة والمجففة،
-      ونعمل على توفير أفضل المنتجات الزراعية للأسواق المحلية والعالمية
-      وفق أعلى معايير الجودة والسلامة.
-    </p>
-  </section>
+    <section class="hero">
+        <h1>أجود المحاصيل المصرية للعالم</h1>
+        <p>نحن رائدون في تصدير الخضروات والفواكه الطازجة بأعلى معايير الجودة الأوروبية والعالمية.</p>
+        <a href="#contact" class="btn">اطلب عرض سعر الآن</a>
+    </section>
 
-  <section class="products">
-    <div class="product">
-  <img src="images/tomato.jpg" alt="Tomato">
-  <div>طماطم طازجة</div>
-</div>
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-check-circle"></i>
+            <h3>جودة معتمدة</h3>
+            <p>مطابقة للمواصفات القياسية الدولية والـ Global GAP.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-shuttle-van"></i>
+            <h3>سلسلة توريد متكاملة</h3>
+            <p>من المزرعة إلى مخازن العميل مباشرة بأقصى سرعة.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-globe-europe"></i>
+            <h3>تصدير لجميع القارات</h3>
+            <p>نصل بمنتجاتنا إلى أوروبا، الخليج العربي، وآسيا.</p>
+        </div>
+    </section>
 
-<div class="product">
-  <img src="images/orange.jpg" alt="Orange">
-  <div>برتقال</div>
-</div>
+    <section id="products" class="products-section">
+        <h2 style="font-size: 2.5rem; color: var(--main-color);">منتجاتنا التصديرية</h2>
+        <div class="products-grid">
+            <div class="product-item">
+                <img src="https://images.unsplash.com/photo-1557844352-761f2565b576?auto=format&fit=crop&w=500&q=60" alt="خضروات">
+                <div class="product-overlay"><h3>الخضروات الطازجة</h3><p>فاصوليا، فلفل، بطاطس</p></div>
+            </div>
+            <div class="product-item">
+                <img src="https://images.unsplash.com/photo-1523472553351-36f88e13ec04?auto=format&fit=crop&w=500&q=60" alt="موالح">
+                <div class="product-overlay"><h3>الموالح</h3><p>برتقال صيفي، أبو سرة، ليمون</p></div>
+            </div>
+            <div class="product-item">
+                <img src="https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?auto=format&fit=crop&w=500&q=60" alt="بصل">
+                <div class="product-overlay"><h3>البصل والثوم</h3><p>بصل أحمر، بصل ذهبي، ثوم أبيض</p></div>
+            </div>
+        </div>
+    </section>
 
-<div class="product">
-  <img src="images/potato.jpg" alt="Potato">
-  <div>بطاطس</div>
-</div>
+    <section id="contact" class="contact-section">
+        <h2 style="margin-bottom: 2rem;">تواصل معنا</h2>
+        <div class="contact-container">
+            <form>
+                <div class="form-group"><label>الاسم بالكامل</label><input type="text" placeholder="أدخل اسمك"></div>
+                <div class="form-group"><label>البريد الإلكتروني</label><input type="email" placeholder="email@example.com"></div>
+                <div class="form-group"><label>الرسالة</label><textarea rows="5" placeholder="اكتب طلبك هنا..."></textarea></div>
+                <button type="submit" class="btn">إرسال الرسالة</button>
+            </form>
+        </div>
+    </section>
 
-<div class="product">
-  <img src="images/grapes.jpg" alt="Grapes">
-  <div>عنب</div>
-</div>
-
-  <section class="services">
-    <h2>خدماتنا</h2>
-    <ul>
-      <li>تصدير المحاصيل الزراعية إلى جميع الدول</li>
-      <li>استيراد المحاصيل حسب طلب العملاء</li>
-      <li>التعبئة والتغليف طبقًا للمعايير الدولية</li>
-      <li>الشحن البحري والبري والجوي</li>
-      <li>فحص الجودة وإصدار الشهادات</li>
-    </ul>
-  </section>
-
-  <section class="contact">
-    <h2>contact us </h2>
-    <p>📍 العنوان: مصر</p>
-    <p>📞 الهاتف: 01000000000</p>
-    <p>✉️ البريد الإلكتروني: info@agroexport.com</p>
-  </section>
-
-  <footer>
-    <p>© 2026 جميع الحقوق محفوظة | شركة تصدير واستيراد محاصيل زراعية</p>
-  </footer>
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>جميع الحقوق محفوظة &copy; 2026 شركة النماء للتصدير</p>
+    </footer>
 
 </body>
 </html>
